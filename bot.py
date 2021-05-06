@@ -5,7 +5,7 @@ from discord.ext import commands, tasks
 
 intents = discord.Intents().all()
 
-client = commands.Bot(command_prefix='.', intents=intents)
+client = commands.Bot(command_prefix='.', intents=intents, case_insensitive=True)
 statuses = cycle(['1', '2', '3'])
 
 # Events
