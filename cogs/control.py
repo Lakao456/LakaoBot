@@ -32,6 +32,22 @@ class Control(commands.Cog):
     async def ban(self, ctx, member: discord.Member, *, reason=None):
         await member.ban(reason=reason)
 
+    @commands.command()
+    async def embed(self, ctx, *, msg):
+        embed = discord.Embed(description=msg, color=0xFF5733)
+        await ctx.send(embed=embed)
+
+
+    # @commands.command(aliases=['notes', 'note'])
+    # async def editable(self, ctx, msg):
+    #     await ctx.channel.purge(limit=1)
+    #     editableMessaage = await ctx.send(msg)
+
+    # @commands.command()
+    # async def edit(self, ctx):
+    #     if (message.author.bot):
+    #         print('yess')
+
 
 def setup(client):
     client.add_cog(Control(client))
